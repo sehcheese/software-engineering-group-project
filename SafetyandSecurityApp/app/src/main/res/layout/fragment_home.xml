@@ -9,4 +9,22 @@
     <TextView android:id="@+id/section_label" android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request Ride"
+        android:id="@+id/shuttleridehome"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Covenant College"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/section_label"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

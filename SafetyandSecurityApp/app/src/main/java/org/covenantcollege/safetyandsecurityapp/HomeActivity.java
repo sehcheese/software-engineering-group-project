@@ -49,10 +49,24 @@ public class HomeActivity extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
+        Fragment obj_fragment = null;
+
+        switch (position) {
+            case 0:
+                obj_fragment = new menu1_Fragment();
+                break;
+            case 1:
+                obj_fragment = new menu2_Fragment();
+                break;
+            case 2:
+                obj_fragment = new menu3_Fragment();
+                break;
+        }
+
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container, obj_fragment)
                 .commit();
     }
 
