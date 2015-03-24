@@ -61,6 +61,9 @@ public class HomeActivity extends ActionBarActivity
             case 2:
                 obj_fragment = new menu3_Fragment();
                 break;
+            case 3:
+                obj_fragment = new shuttle_Fragment();
+                break;
         }
 
         // update the main content by replacing fragments
@@ -80,6 +83,9 @@ public class HomeActivity extends ActionBarActivity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle = "Shuttle Requests";
                 break;
         }
     }

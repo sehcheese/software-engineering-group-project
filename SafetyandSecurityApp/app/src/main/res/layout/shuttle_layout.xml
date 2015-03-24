@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.covenantcollege.safetyandsecurityapp.Shuttle_Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/call_shuttle_button"
+        android:id="@+id/callButton"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_shuttle_button"
+        android:id="@+id/textButton"
+        android:layout_below="@+id/destinationSpinner"
+        android:layout_alignLeft="@+id/callButton"
+        android:layout_alignStart="@+id/callButton"
+        android:layout_marginTop="40dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/pick_up_name"
+        android:ems="10"
+        android:id="@+id/shuttleName"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/callButton"
+        android:layout_alignRight="@+id/callButton"
+        android:layout_alignEnd="@+id/callButton" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationSpinner"
+        android:entries="@array/shuttle_locations"
+        android:prompt="@string/choose_shuttle_location"
+        android:layout_marginTop="40dp"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/shuttleName"
+        android:layout_toRightOf="@+id/pickupLocation"
+        android:layout_toEndOf="@+id/pickupLocation" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/pick_up_location"
+        android:id="@+id/pickupLocation"
+        android:layout_alignTop="@+id/locationSpinner"
+        android:layout_alignLeft="@+id/shuttleName"
+        android:layout_alignStart="@+id/shuttleName" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/destinationSpinner"
+        android:entries="@array/shuttle_locations"
+        android:prompt="@string/choose_shuttle_location"
+        android:layout_marginTop="40dp"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/locationSpinner"
+        android:layout_toRightOf="@+id/pickupLocation"
+        android:layout_toEndOf="@+id/pickupLocation" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/shuttle_destination"
+        android:id="@+id/destinationLabel"
+        android:layout_alignTop="@+id/destinationSpinner"
+        android:layout_alignLeft="@+id/pickupLocation"
+        android:layout_alignStart="@+id/pickupLocation" />
+
+</RelativeLayout>

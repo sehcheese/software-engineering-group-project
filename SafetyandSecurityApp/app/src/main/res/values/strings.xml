@@ -5,9 +5,29 @@
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
+    <string name="title_shuttle">Shuttle Requests</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+
+    <!-- For Shuttle Requests -->
+    <string name="pick_up_name">Name</string>
+    <string name="pick_up_location">Pick Up Location: </string>
+    <string name="shuttle_destination">Destination: </string>
+    <string name="call_shuttle_button">Call the Shuttle</string>
+    <string name="text_shuttle_button">Text the Shuttle</string>
+    <string name="choose_shuttle_location">Choose Pick Up Location</string>
+    <string-array name="shuttle_locations">
+        <item>Shadowlands</item>
+        <item>Scotland Yard</item>
+        <item>Carter</item>
+        <item>Mac</item>
+        <item>Founders</item>
+        <item>Andreas</item>
+    </string-array>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
