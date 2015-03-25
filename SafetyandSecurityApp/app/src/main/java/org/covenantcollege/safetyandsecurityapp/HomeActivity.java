@@ -1,6 +1,8 @@
 package org.covenantcollege.safetyandsecurityapp;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -17,6 +19,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class HomeActivity extends ActionBarActivity
@@ -164,6 +167,24 @@ public class HomeActivity extends ActionBarActivity
             ((HomeActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
+    }
+    //calls the shuttle
+    public void callShuttle(View view) {
+        //Log.v("Test", "[*] testPhoneCall()");
+        Toast.makeText(view.getActivity(), "Calling?", Toast.LENGTH_SHORT).show();
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:1234567890"));
+        startActivity(callIntent);
+    }
+
+    public void textShuttle(View view) {
+        String number = "1234567890";//edittText1.getText().toString();
+        String message = "test";//edittText2.getText().toString();
+        /*Intent i=new Intent(getApplicationContext(),MainActivity.class);
+        PendingIntent pIntent=PendingIntent.getActivity(getApplicationContext(), 0, i,0);
+        SmsManager sms=SmsManager.getDefault();
+        sms.sendTextMessage(number, null, message, pIntent, null);*/
+        Toast.makeText(getActivity(), "Message Sent !", Toast.LENGTH_LONG).show();
     }
 
 }
