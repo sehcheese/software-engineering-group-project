@@ -12,8 +12,7 @@
         android:id="@+id/callButton"
         android:layout_marginTop="40dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="callShuttle" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -23,8 +22,7 @@
         android:layout_below="@+id/destinationSpinner"
         android:layout_alignLeft="@+id/callButton"
         android:layout_alignStart="@+id/callButton"
-        android:layout_marginTop="40dp"
-        android:onClick="shuttle_textShuttle" />
+        android:layout_marginTop="40dp" />
 
     <EditText
         android:layout_width="wrap_content"

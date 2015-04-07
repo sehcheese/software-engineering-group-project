@@ -1,12 +1,10 @@
 package org.covenantcollege.safetyandsecurityapp;
 
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +22,21 @@ public class shuttle_Fragment extends Fragment {
     {
         rootview = inflater.inflate(R.layout.shuttle_layout, container, false);
 
+        //set up the buttons
+        Button callButton = (Button) rootview.findViewById(R.id.callButton);
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callShuttle(v);
+            }
+        });
+        Button textButton = (Button) rootview.findViewById(R.id.textButton);
+        textButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textShuttle(v);
+            }
+        });
         return rootview;
     }
 
@@ -60,13 +73,13 @@ public class shuttle_Fragment extends Fragment {
         Toast.makeText(getActivity(), "Calling?", Toast.LENGTH_SHORT).show();
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:1234567890"));
-        startActivity(callIntent);
+        //startActivity(callIntent);
     }
 
     public void textShuttle(View view) {
         String number = "1234567890";//edittText1.getText().toString();
         String message = "test";//edittText2.getText().toString();
-        /*Intent i=new Intent(getApplicationContext(),MainActivity.class);
+/*        Intent i=new Intent(getApplicationContext(),MainActivity.class);
         PendingIntent pIntent=PendingIntent.getActivity(getApplicationContext(), 0, i,0);
         SmsManager sms=SmsManager.getDefault();
         sms.sendTextMessage(number, null, message, pIntent, null);*/
