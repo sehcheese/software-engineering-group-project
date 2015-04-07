@@ -12,6 +12,7 @@
     <string name="action_settings">Settings</string>
 
     <!-- For Shuttle Requests -->
+    <string name="shuttle_number">1234567890</string>
     <string name="pick_up_name">Name</string>
     <string name="pick_up_location">Pick Up Location: </string>
     <string name="shuttle_destination">Destination: </string>
