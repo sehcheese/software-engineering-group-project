@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/textfield">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/tip_text"
+        android:id="@+id/tipTitle_text"
+        android:layout_marginTop="63dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tip_button_text"
+        android:id="@+id/tip_button"
+        android:layout_below="@+id/tip_editText"
+        android:layout_alignLeft="@+id/tip_editText"
+        android:layout_alignStart="@+id/tip_editText" />  <!-- android:onClick="sendMessage" needs to be created still -->
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/tip_editText"
+        android:layout_below="@+id/tipTitle_text"
+        android:layout_alignLeft="@+id/tipTitle_text"
+        android:layout_alignStart="@+id/tipTitle_text"
+        android:layout_marginTop="61dp" />
+
+
+
+</RelativeLayout>
