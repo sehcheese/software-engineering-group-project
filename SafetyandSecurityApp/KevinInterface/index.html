@@ -4,25 +4,36 @@
 
 	<head>
 		<meta charset = "UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--bootstrap-->
+		<link href="bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="./bootstrap-3.3.4-dist/css/bootstrap.css"/>
 		<title>Kevin Patty's Awesome Data Entering Interface!</title>
 	</head>
 <!-------remember consistency-------->
 	<body>
-		<p>Check anonymous tips</p>
-		<form action="anonymousTips.html">
-			<input type="submit" value="See Anonymous Tips">
-		</form>
-		
-		<p>Edit Maps</p>
-		<form action="mapEdit.html">
-			<input type="submit" value="Edit Maps">
-		</form>
-		
-		<p>That other thing I can't remember</p>
-		<form action="http://google.com">
-			<input type="submit" value="Yay! ^_^">
-		</form>
-		
+		<div class="row" id="buttonsDiv">
+			<div class="col-md-1" id="anonTipButDiv">
+				<p>Check anonymous tips</p>
+				<form action="anonymousTips.html" class="normButton">
+					<input type="submit" value="See Anonymous Tips">
+				</form>
+			</div>
+			<div class="col-md-11" id="editMapButDiv">
+				<p>Edit Maps</p>
+				<form action="mapEdit.html" class="normButton">
+					<input type="submit" value="Edit Maps">
+				</form>
+			</div>
+			<!--
+			<div class="container">
+				<p>That other thing I can't remember</p>
+				<form action="http://google.com">
+					<input type="submit" value="Yay! ^_^">
+				</form>
+			</div>
+			-->
+		</div>
 	</body>
 	
 </html>
