@@ -31,14 +31,14 @@ public class shuttle_Fragment extends Fragment {
         rootview = inflater.inflate(R.layout.shuttle_layout, container, false);
 
         //set up the buttons
-        Button callButton = (Button) rootview.findViewById(R.id.callButton);
+        Button callButton = (Button) rootview.findViewById(R.id.callShuttleButton);
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 callShuttle(rootview);
             }
         });
-        Button textButton = (Button) rootview.findViewById(R.id.textButton);
+        Button textButton = (Button) rootview.findViewById(R.id.textShuttleButton);
         textButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,36 +48,8 @@ public class shuttle_Fragment extends Fragment {
         return rootview;
     }
 
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu items for use in the action bar
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu., menu);
-        return super.onCreateOptionsMenu(menu);
-    }*/
-
-
-    /*//This allows us to do stuff when the buttons are clicked
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.textButton:
-                System.out.println("texting shuttle");
-                return true;
-            case R.id.callButton:
-                System.out.println("calling shuttle");
-                callShuttle();
-                return true;
-            default:
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
-
     //calls the shuttle
     public void callShuttle(View view) {
-        //Log.v("Test", "[*] testPhoneCall()");
         Toast.makeText(getActivity(), "Calling the Security Shuttle", Toast.LENGTH_SHORT).show();
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:" + shuttleNumber));
@@ -85,9 +57,9 @@ public class shuttle_Fragment extends Fragment {
     }
 
     public void textShuttle(View view) {
-        EditText nameField = (EditText)view.findViewById(R.id.shuttleName);
-        Spinner fromLocation = (Spinner)view.findViewById(R.id.locationSpinner);
-        Spinner toLocation = (Spinner)view.findViewById(R.id.destinationSpinner);
+        EditText nameField = (EditText)view.findViewById(R.id.shuttleRiderName);
+        Spinner fromLocation = (Spinner)view.findViewById(R.id.shuttlePickUpLocationSpinner);
+        Spinner toLocation = (Spinner)view.findViewById(R.id.shuttleDestinationSpinner);
         String message = "Hi im " + nameField.getText() + " and I'm feeling lazy. Come pick me up at " + fromLocation.getSelectedItem().toString() +
                 " and take me alllll the way to " + toLocation.getSelectedItem().toString() + ". Oh and make it snappy. Ain't nobody got time for waitin'! Hurry!";
 

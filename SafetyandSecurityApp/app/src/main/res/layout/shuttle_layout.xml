@@ -8,8 +8,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/call_shuttle_button"
-        android:id="@+id/callButton"
+        android:text="@string/call_shuttle_button_text"
+        android:id="@+id/callShuttleButton"
         android:layout_marginTop="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -17,67 +17,67 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_shuttle_button"
-        android:id="@+id/textButton"
-        android:layout_below="@+id/destinationSpinner"
-        android:layout_alignLeft="@+id/callButton"
-        android:layout_alignStart="@+id/callButton"
+        android:text="@string/text_shuttle_button_text"
+        android:id="@+id/textShuttleButton"
+        android:layout_below="@+id/shuttleDestinationSpinner"
+        android:layout_alignLeft="@+id/callShuttleButton"
+        android:layout_alignStart="@+id/callShuttleButton"
         android:layout_marginTop="40dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/pick_up_name"
+        android:text="@string/shuttle_ride_name_text"
         android:ems="10"
-        android:id="@+id/shuttleName"
+        android:id="@+id/shuttleRiderName"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/callButton"
-        android:layout_alignRight="@+id/callButton"
-        android:layout_alignEnd="@+id/callButton" />
+        android:layout_below="@+id/callShuttleButton"
+        android:layout_alignRight="@+id/callShuttleButton"
+        android:layout_alignEnd="@+id/callShuttleButton" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/locationSpinner"
-        android:entries="@array/shuttle_locations"
-        android:prompt="@string/choose_shuttle_location"
+        android:id="@+id/shuttlePickUpLocationSpinner"
+        android:entries="@array/shuttle_potential_locations"
+        android:prompt="@string/shuttle_pick_up_location_prompt"
         android:layout_marginTop="40dp"
         android:spinnerMode="dropdown"
-        android:layout_below="@+id/shuttleName"
-        android:layout_toRightOf="@+id/pickupLocation"
-        android:layout_toEndOf="@+id/pickupLocation" />
+        android:layout_below="@+id/shuttleRiderName"
+        android:layout_toRightOf="@+id/shuttlePickupLocation"
+        android:layout_toEndOf="@+id/shuttlePickupLocation" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/pick_up_location"
-        android:id="@+id/pickupLocation"
-        android:layout_alignTop="@+id/locationSpinner"
-        android:layout_alignLeft="@+id/shuttleName"
-        android:layout_alignStart="@+id/shuttleName" />
+        android:text="@string/shuttle_pick_up_location_text"
+        android:id="@+id/shuttlePickupLocation"
+        android:layout_alignTop="@+id/shuttlePickUpLocationSpinner"
+        android:layout_alignLeft="@+id/shuttleRiderName"
+        android:layout_alignStart="@+id/shuttleRiderName" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/destinationSpinner"
-        android:entries="@array/shuttle_locations"
-        android:prompt="@string/choose_shuttle_location"
+        android:id="@+id/shuttleDestinationSpinner"
+        android:entries="@array/shuttle_potential_locations"
+        android:prompt="@string/shuttle_pick_up_location_prompt"
         android:layout_marginTop="40dp"
         android:spinnerMode="dropdown"
-        android:layout_below="@+id/locationSpinner"
-        android:layout_toRightOf="@+id/pickupLocation"
-        android:layout_toEndOf="@+id/pickupLocation" />
+        android:layout_below="@+id/shuttlePickUpLocationSpinner"
+        android:layout_toRightOf="@+id/shuttlePickupLocation"
+        android:layout_toEndOf="@+id/shuttlePickupLocation" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/shuttle_destination"
-        android:id="@+id/destinationLabel"
-        android:layout_alignTop="@+id/destinationSpinner"
-        android:layout_alignLeft="@+id/pickupLocation"
-        android:layout_alignStart="@+id/pickupLocation" />
+        android:text="@string/shuttle_destination_prompt"
+        android:id="@+id/shuttleDestinationLabel"
+        android:layout_alignTop="@+id/shuttleDestinationSpinner"
+        android:layout_alignLeft="@+id/shuttlePickupLocation"
+        android:layout_alignStart="@+id/shuttlePickupLocation" />
 
 </RelativeLayout>
