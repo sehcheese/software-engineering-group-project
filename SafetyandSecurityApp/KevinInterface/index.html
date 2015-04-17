@@ -1,39 +1,38 @@
 <!DOCTYPE = html>
-
+<!---Some code adapted from http://bootsnipp.com/snippets/featured/toggle-navbar --->
 <html>
 
 	<head>
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--bootstrap-->
-		<link href="bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="./bootstrap-3.3.4-dist/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="./AllTheCSS.css"/>
 		<title>Kevin Patty's Awesome Data Entering Interface!</title>
 	</head>
 <!-------remember consistency-------->
 	<body>
-		<div class="row" id="buttonsDiv">
-			<div class="col-md-1" id="anonTipButDiv">
-				<p>Check anonymous tips</p>
-				<form action="anonymousTips.html" class="normButton">
-					<input type="submit" value="See Anonymous Tips">
-				</form>
+		
+		<div class="container" id="home-jumbo-holder">
+			<div class="jumbotron">
+				<img class="img-responsive" src="./CovenantCollege.jpg" alt="Covenant College"/>
 			</div>
-			<div class="col-md-11" id="editMapButDiv">
-				<p>Edit Maps</p>
-				<form action="mapEdit.html" class="normButton">
-					<input type="submit" value="Edit Maps">
-				</form>
-			</div>
-			<!--
-			<div class="container">
-				<p>That other thing I can't remember</p>
-				<form action="http://google.com">
-					<input type="submit" value="Yay! ^_^">
-				</form>
-			</div>
-			-->
 		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5" id="tips-well">
+					<div class="well" id="tips">This is where the anonymous tips should end up</div>
+				</div>
+				
+				<div class="col-md-2"></div>
+					
+				<div class="col-md-5" id="maps-well">
+					<div class="well" id="maps">something about maps</div>
+				</div>
+			</div>
+		</div>
+		
+    
 	</body>
 	
 </html>
