@@ -25,7 +25,7 @@ import java.net.URL;
 
 
 /**
- * this class controls the tip submission page and has a listener for the button
+ * This class controls the tip submission page and has a listener for the button
  */
 public class tipSubmission_Fragment extends Fragment {
     View rootview;
