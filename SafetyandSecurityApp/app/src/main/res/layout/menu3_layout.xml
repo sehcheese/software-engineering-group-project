@@ -6,9 +6,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Menu3"
+        android:text="Emergency Maps"
         android:id="@+id/menu1text"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Switch"
+        android:id="@+id/switch1"
+        android:layout_below="@+id/menu1text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp" />
 </RelativeLayout>
