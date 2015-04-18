@@ -7,12 +7,17 @@
 	background-color: #3385FF;
 }
 
-#maps-well{
-	background-color: #3385FF;
+.white-table{
+	background-color: #ffffff;
 }
 
-.padded-bottom-tr{
-	padding-bottom: 30px;
+.not-white{
+	background-color: #1C488A;
+}
+
+#maps{
+	background-color: #1C488A;
+	border-color: #1C488A;
 }
 
 body{
