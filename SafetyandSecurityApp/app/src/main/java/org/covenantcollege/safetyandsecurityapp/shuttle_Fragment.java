@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.telephony.SmsManager;
@@ -45,6 +46,12 @@ public class shuttle_Fragment extends Fragment {
                 textShuttle(rootview);
             }
         });
+
+        //set our min/max values for the number picker
+        NumberPicker riders = (NumberPicker)rootview.findViewById(R.id.shuttleNumberOfRiders);
+        riders.setMaxValue(8);
+        riders.setMinValue(1);
+        riders.setValue(1);
         return rootview;
     }
 
@@ -60,7 +67,18 @@ public class shuttle_Fragment extends Fragment {
         EditText nameField = (EditText)view.findViewById(R.id.shuttleRiderName);
         Spinner fromLocation = (Spinner)view.findViewById(R.id.shuttlePickUpLocationSpinner);
         Spinner toLocation = (Spinner)view.findViewById(R.id.shuttleDestinationSpinner);
-        String message = "Hi im " + nameField.getText() + " and I'm feeling lazy. Come pick me up at " + fromLocation.getSelectedItem().toString() +
+        NumberPicker riders = (NumberPicker)view.findViewById(R.id.shuttleNumberOfRiders);
+        String message = "Hi im " + nameField.getText() + " and I'm feeling lazy. Come pick me";
+        if(riders.getValue() > 1)
+        {
+            message += " and " + (riders.getValue() - 1) + " other brohans";
+        }
+        else
+        {
+            message += " all by my lonesome self";
+        }
+
+        message += " up at " + fromLocation.getSelectedItem().toString() +
                 " and take me alllll the way to " + toLocation.getSelectedItem().toString() + ". Oh and make it snappy. Ain't nobody got time for waitin'! Hurry!";
 
         System.out.println(message);
