@@ -1,15 +1,19 @@
 package org.covenantcollege.safetyandsecurityapp;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -28,6 +32,8 @@ public class tipSubmission_Fragment extends Fragment {
     Button mButton;
     EditText mEdit;
     String tip;
+    private static String ConfirmationText = "Thank you for submitting a tip";
+    private static String ProblemText = "Error, please try submitting your tip again";
 
     @Nullable
     @Override
@@ -49,25 +55,16 @@ public class tipSubmission_Fragment extends Fragment {
 
                 tipSubmittedTask task = new tipSubmittedTask();
                 task.execute(sub);
-
-                //perhaps open a confirmation page here? "thanks for submitting, etc."
-
             }
         });
 
         return rootview;
-
     }
 
 
     //this is more or less from https://github.com/codepath/android_guides/wiki/Creating-and-Executing-Async-Tasks
     //types specified here are the input data type, the progress type, and the result type
     private class tipSubmittedTask extends AsyncTask<String, Void, String> {
-        protected void onPreExecute() {
-            //runs on UI thread before doINBackground
-            //Good for toggling visibility of a progress indicator
-
-        }
 
         protected String doInBackground(String... str) {
             // do POST here
@@ -93,14 +90,11 @@ public class tipSubmission_Fragment extends Fragment {
                 con.setRequestProperty("Content-Length", "" + Integer.toString(urlParameters.getBytes().length));
                 con.setUseCaches(false);
 
-                Log.d("update", "i am here");
                 // Write parameters, flush and close connection
                 DataOutputStream wr = new DataOutputStream(con.getOutputStream ());
                 wr.writeBytes(urlParameters);
                 wr.flush();
                 wr.close();
-
-                Log.d("update2", "now i am here");
 
                 // Read results
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -116,11 +110,9 @@ public class tipSubmission_Fragment extends Fragment {
                     return "Server Error";
                 }
             } catch (MalformedURLException e) {
-                Log.d("malform", "malform error");
                 e.printStackTrace();
                 return "Error";
             } catch (IOException e) {
-                Log.d("io", "io exception");
                 e.printStackTrace();
                 return "Error. Are you connected to the Internet?";
             }
@@ -131,7 +123,23 @@ public class tipSubmission_Fragment extends Fragment {
         protected void onPostExecute(String result) {
             // This method is executed in the UIThread
             // with access to the result of the long running task
-            Log.d("post", result+" finished");
+            Log.v("post", result+" finished");
+
+            EditText mEdit = (EditText) rootview.findViewById(R.id.tip_editText);
+            mEdit.setText("");
+
+            Context context = getActivity();
+            String text;
+            if (result.contains("Error")) {
+                text = ProblemText;
+            }
+            else {
+                text = ConfirmationText;
+            }
+            Toast alert = Toast.makeText(context,text,Toast.LENGTH_SHORT);
+            alert.show();
+            Log.v("after commit", "after commit?");
+
         }
 
     }
