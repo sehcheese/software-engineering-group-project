@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class shuttle_Fragment extends Fragment {
     View rootview;
 
-    String shuttleNumber = "1234567890";
+    String shuttleNumber = "4234002654";
 
     @Nullable
     @Override
