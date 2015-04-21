@@ -40,19 +40,27 @@ public class tipSubmission_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.tip_submission_layout, container, false);
 
+
+        //grabs the submit button so I can create an onClick listener for it
         mButton = (Button)rootview.findViewById(R.id.tip_button);
+
+        //grabs the edit text box that holds the text the user enters
         mEdit = (EditText) rootview.findViewById(R.id.tip_editText);
 
 
-        //this click listener reacts when the submit button is clicked on tip_submission_layout
+        //mEdit.setBackgroundResource(R.layout.tip_background);
+
+
+        //this click listener reacts when the submit button is clicked on the tip_submission_layout page
         mButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 tip = mEdit.getText().toString();
-                Log.v("tip text", tip);  //this prints info to the log console so you can see it, it also has to be directly from mEdit for some reason
+                Log.v("tip text", tip);  //this prints info to the log console
 
                 String[] sub = new String[1];
                 sub[0] = tip;
 
+                //create and run new task, which will post the tip text to a url
                 tipSubmittedTask task = new tipSubmittedTask();
                 task.execute(sub);
             }
@@ -77,22 +85,22 @@ public class tipSubmission_Fragment extends Fragment {
                 String urlString = "https://selfsolve.apple.com/wcResults.do";  //test url
 
 
-                String urlParameters = str[0];
-                //String urlParameters = tip;
+                String info = str[0];  //info is the tip text, passed in thru the execute method
 
-                Log.d("params",urlParameters);  //these are interspersed debuggers that print to logcat
+                Log.d("params",info);  //these are interspersed debuggers that print to logcat
+
                 // Setup and open HTTP connection
                 URL url = new URL(urlString);
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                con.setDoOutput(true); //I added this, it was not in original
+                con.setDoOutput(true);
                 con.setRequestMethod("POST");
                 con.setRequestProperty("charset", "utf-8");
-                con.setRequestProperty("Content-Length", "" + Integer.toString(urlParameters.getBytes().length));
+                con.setRequestProperty("Content-Length", "" + Integer.toString(info.getBytes().length));
                 con.setUseCaches(false);
 
                 // Write parameters, flush and close connection
                 DataOutputStream wr = new DataOutputStream(con.getOutputStream ());
-                wr.writeBytes(urlParameters);
+                wr.writeBytes(info);
                 wr.flush();
                 wr.close();
 
@@ -122,7 +130,7 @@ public class tipSubmission_Fragment extends Fragment {
 
         protected void onPostExecute(String result) {
             // This method is executed in the UIThread
-            // with access to the result of the long running task
+            // with access to the result of the long running task (tipSubmittedTask)
             Log.v("post", result+" finished");
 
             EditText mEdit = (EditText) rootview.findViewById(R.id.tip_editText);
@@ -136,7 +144,7 @@ public class tipSubmission_Fragment extends Fragment {
             else {
                 text = ConfirmationText;
             }
-            Toast alert = Toast.makeText(context,text,Toast.LENGTH_SHORT);
+            Toast alert = Toast.makeText(context,text,Toast.LENGTH_SHORT);  //this shows a small alert on the page to confirm submission
             alert.show();
             Log.v("after commit", "after commit?");
 
