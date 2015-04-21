@@ -3,9 +3,7 @@
     android:layout_height="match_parent"
     tools:context="org.covenantcollege.safetyandsecurityapp.Shuttle_Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <Button
+   <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/call_shuttle_button_text"
@@ -28,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="@string/shuttle_ride_name_text"
+        android:hint="@string/shuttle_ride_name_text"
         android:ems="10"
         android:id="@+id/shuttleRiderName"
         android:layout_marginTop="34dp"

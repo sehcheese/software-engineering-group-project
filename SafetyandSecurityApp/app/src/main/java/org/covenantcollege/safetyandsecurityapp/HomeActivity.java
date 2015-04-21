@@ -58,7 +58,7 @@ public class HomeActivity extends ActionBarActivity
                 break;
             // Shuttle request
             case 1:
-                obj_fragment = new menu3_Fragment();
+                obj_fragment = new shuttle_Fragment();
                 break;
             // Anonymous tip submission
             case 2:
@@ -71,9 +71,6 @@ public class HomeActivity extends ActionBarActivity
             // Parking info
             case 4:
                 obj_fragment = new menu3_Fragment();
-                break;
-            case 3:
-                obj_fragment = new shuttle_Fragment();
                 break;
         }
 
@@ -100,9 +97,6 @@ public class HomeActivity extends ActionBarActivity
                 break;
             case 5:
                 mTitle = getString(R.string.parking_info);
-                break;
-            case 4:
-                mTitle = "Shuttle Requests";
                 break;
         }
     }
