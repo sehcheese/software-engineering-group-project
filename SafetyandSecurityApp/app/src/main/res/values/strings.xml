@@ -14,4 +14,24 @@
     <string name="tip_text">Enter Anonymous Tip:</string>
     <string name="tip_button_text">Submit</string>
 
+    <!-- For Shuttle Requests -->
+    <string name="shuttle_ride_name_text">Name</string>
+    <string name="shuttle_pick_up_location_text">Pick Up Location: </string>
+    <string name="shuttle_destination_prompt">Destination: </string>
+    <string name="call_shuttle_button_text">Call the Shuttle</string>
+    <string name="text_shuttle_button_text">Text the Shuttle</string>
+    <string name="shuttle_pick_up_location_prompt">Choose Pick Up Location</string>
+    <string name="shuttle_riders_text">Number of Riders</string>
+    <string-array name="shuttle_potential_locations">
+        <item>Shadowlands</item>
+        <item>Scotland Yard</item>
+        <item>Carter</item>
+        <item>Mac</item>
+        <item>Founders</item>
+        <item>Andreas</item>
+    </string-array>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

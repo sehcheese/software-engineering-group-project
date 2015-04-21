@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.covenantcollege.safetyandsecurityapp.Shuttle_Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/call_shuttle_button_text"
+        android:id="@+id/callShuttleButton"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_shuttle_button_text"
+        android:id="@+id/textShuttleButton"
+        android:layout_below="@+id/shuttleDestinationSpinner"
+        android:layout_alignLeft="@+id/callShuttleButton"
+        android:layout_alignStart="@+id/callShuttleButton"
+        android:layout_marginTop="40dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/shuttle_ride_name_text"
+        android:ems="10"
+        android:id="@+id/shuttleRiderName"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/callShuttleButton"
+        android:layout_alignRight="@+id/textShuttleButton"
+        android:layout_alignEnd="@+id/textShuttleButton" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shuttlePickUpLocationSpinner"
+        android:entries="@array/shuttle_potential_locations"
+        android:prompt="@string/shuttle_pick_up_location_prompt"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/shuttlePickupLocation"
+        android:layout_toRightOf="@+id/shuttlePickupLocation"
+        android:layout_toEndOf="@+id/shuttlePickupLocation" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/shuttle_pick_up_location_text"
+        android:id="@+id/shuttlePickupLocation"
+        android:layout_below="@+id/shuttleNumberOfRiders"
+        android:layout_alignRight="@+id/shuttleRidersPrompt"
+        android:layout_alignEnd="@+id/shuttleRidersPrompt"
+        android:layout_marginTop="20dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shuttleDestinationSpinner"
+        android:entries="@array/shuttle_potential_locations"
+        android:prompt="@string/shuttle_pick_up_location_prompt"
+        android:layout_marginTop="20dp"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/shuttlePickUpLocationSpinner"
+        android:layout_toRightOf="@+id/shuttlePickupLocation"
+        android:layout_toEndOf="@+id/shuttlePickupLocation" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/shuttle_destination_prompt"
+        android:id="@+id/shuttleDestinationLabel"
+        android:layout_alignTop="@+id/shuttleDestinationSpinner"
+        android:layout_alignLeft="@+id/shuttlePickupLocation"
+        android:layout_alignStart="@+id/shuttlePickupLocation" />
+
+    <NumberPicker
+        android:id="@+id/shuttleNumberOfRiders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shuttleRiderName"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/callShuttleButton"
+        android:layout_toEndOf="@+id/callShuttleButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/shuttle_riders_text"
+        android:id="@+id/shuttleRidersPrompt"
+        android:layout_below="@+id/shuttleRiderName"
+        android:layout_alignLeft="@+id/shuttleRiderName"
+        android:layout_alignStart="@+id/shuttleRiderName"
+        android:layout_marginTop="60dp" />
+</RelativeLayout>
