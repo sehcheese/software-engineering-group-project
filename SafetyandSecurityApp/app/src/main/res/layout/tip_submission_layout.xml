@@ -25,13 +25,14 @@
         android:id="@+id/tip_editText"
         android:ems="10"
         android:layout_below="@+id/tipTitle_text"
-        android:layout_alignLeft="@+id/tipTitle_text"
-        android:layout_alignStart="@+id/tipTitle_text"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:layout_above="@+id/tip_button"
         android:layout_alignRight="@+id/tipTitle_text"
         android:layout_alignEnd="@+id/tipTitle_text"
         android:gravity="top"
+        android:background="@drawable/border"
+        android:padding="5dp"
         />
 
 
