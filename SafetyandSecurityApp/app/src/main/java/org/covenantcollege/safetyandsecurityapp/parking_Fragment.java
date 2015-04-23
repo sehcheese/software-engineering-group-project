@@ -37,20 +37,23 @@ public class parking_Fragment extends Fragment {
                 /**
                  *
                  */
-                File pdf_file = new File(Environment.getExternalStorageDirectory(), "Parking Regulations.pdf");
+                File pdf_file = new File(Environment.getExternalStorageDirectory(), "regulations.pdf"); // filepath
                 try
                 {
-                    if(pdf_file.exists())
+                    if(pdf_file.exists()) // if pdf file exists
                     {
                         Uri path = Uri.fromFile(pdf_file);
 
                         Intent objIntent = new Intent(Intent.ACTION_VIEW);
 
                         objIntent.setDataAndType(path, "application/pdf");
-
+                        /*objIntent.setDataAndType(
+                                Uri.parse("file://" + path + "/regulations.pdf"),
+                                "application/pdf");
+*/
                         objIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-                        startActivity(objIntent);
+                        startActivity(objIntent); // start the pdf viewer
 
                     } else
                     {
