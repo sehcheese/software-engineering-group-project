@@ -53,7 +53,7 @@ public class HomeActivity extends ActionBarActivity
                 break;
             // Shuttle request
             case 1:
-                obj_fragment = new menu3_Fragment();
+                obj_fragment = new shuttle_Fragment();
                 break;
             // Anonymous tip submission
             case 2:
@@ -61,11 +61,11 @@ public class HomeActivity extends ActionBarActivity
                 break;
             // Emergency info
             case 3:
-                obj_fragment = new menu3_Fragment();
+                obj_fragment = new parking_Fragment();
                 break;
             // Parking info
             case 4:
-                obj_fragment = new menu3_Fragment();
+                obj_fragment = new parking_Fragment();
                 break;
         }
 
@@ -171,5 +171,4 @@ public class HomeActivity extends ActionBarActivity
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
-
 }
