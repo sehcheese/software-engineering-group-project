@@ -47,24 +47,20 @@ public class HomeActivity extends ActionBarActivity
         Fragment obj_fragment = null;
 
         switch (position) {
-            // Home
-            case 0:
-                obj_fragment = new menu1_Fragment();
-                break;
             // Shuttle request
-            case 1:
+            case 0:
                 obj_fragment = new shuttle_Fragment();
                 break;
             // Anonymous tip submission
-            case 2:
+            case 1:
                 obj_fragment = new tipSubmission_Fragment();
                 break;
             // Emergency info
-            case 3:
+            case 2:
                 obj_fragment = new EmergencyInfo();
                 break;
             // Parking info
-            case 4:
+            case 3:
                 obj_fragment = new parking_Fragment();
                 break;
         }
@@ -79,18 +75,15 @@ public class HomeActivity extends ActionBarActivity
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.home);
-                break;
-            case 2:
                 mTitle = getString(R.string.shuttle_request);
                 break;
-            case 3:
+            case 2:
                 mTitle = getString(R.string.anonymous_tip);
                 break;
-            case 4:
+            case 3:
                 mTitle = getString(R.string.emergency_info);
                 break;
-            case 5:
+            case 4:
                 mTitle = getString(R.string.parking_info);
                 break;
         }
