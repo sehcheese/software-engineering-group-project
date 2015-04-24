@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
+import java.net.URL;
 
 /**
  *
@@ -37,29 +38,18 @@ public class parking_Fragment extends Fragment {
                 /**
                  *
                  */
-                File pdf_file = new File(Environment.getExternalStorageDirectory(), "regulations.pdf"); // filepath
+                //File pdf_file = new File("regulations.pdf"); // filepath
                 try
                 {
-                    if(pdf_file.exists()) // if pdf file exists
-                    {
-                        Uri path = Uri.fromFile(pdf_file);
+                        Uri path = Uri.parse("android.resource://org.covenantcollege.safetyandsecurityapp/raw/regulations");
 
                         Intent objIntent = new Intent(Intent.ACTION_VIEW);
 
                         objIntent.setDataAndType(path, "application/pdf");
-                        /*objIntent.setDataAndType(
-                                Uri.parse("file://" + path + "/regulations.pdf"),
-                                "application/pdf");
-*/
+
                         objIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                         startActivity(objIntent); // start the pdf viewer
-
-                    } else
-                    {
-                        Toast.makeText(getActivity(), "File not found",
-                                Toast.LENGTH_SHORT).show();
-                    }
 
                 } catch (ActivityNotFoundException e)
                 {
