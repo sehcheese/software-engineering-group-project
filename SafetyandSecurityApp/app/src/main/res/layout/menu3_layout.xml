@@ -25,4 +25,28 @@
         android:layout_below="@+id/menu1text"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/emergency_map_spinner" />
+
+    <resources>
+        <string-array name="Building options">
+            <item>Andreas Basement</item>
+            <item>Ashe Barnes First Floor</item>
+            <item>Brock Hall Basement</item>
+            <item>Carter Basement</item>
+            <item>Chapel Subground Level</item>
+            <item>Founders Belz Ground Floor</item>
+            <item>Guest Cottages</item>
+            <item>Jackson Hall</item>
+            <item>Library First Floor</item>
+            <item>Mac Basement</item>
+            <item>Mills First Floor</item>
+            <item>Probasco First Floor</item>
+            <item>Sanderson First Floor</item>
+            <item>Student Apartments</item>
+        </string-array>
+    </resources>
 </RelativeLayout>
