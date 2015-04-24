@@ -1,0 +1,29 @@
+#home-jumbo-holder{
+	margin-top: 15px;
+	
+}
+
+#tips-well{
+	background-color: #3385FF;
+}
+
+.white-table{
+	background-color: #ffffff;
+}
+
+.not-white{
+	background-color: #1C488A;
+}
+
+#maps{
+	background-color: #1C488A;
+	border-color: #1C488A;
+}
+
+#add-button{
+	marginf: 10px;
+}
+
+body{
+	background: #3385FF;
+}
