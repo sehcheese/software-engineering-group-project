@@ -1,6 +1,5 @@
 package org.covenantcollege.safetyandsecurityapp;
 
-<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -134,13 +133,4 @@ public class EmergencyInfo extends Fragment {
             image.setImageResource(R.drawable.student_apartments);
         return true;
     }
-
-=======
-import android.app.Fragment;
-
-/**
- * Created by mbabu on 4/23/15.
- */
-public class EmergencyInfo extends Fragment {
->>>>>>> origin/master
 }

@@ -61,11 +61,7 @@ public class HomeActivity extends ActionBarActivity
                 break;
             // Emergency info
             case 3:
-<<<<<<< HEAD
                 obj_fragment = new EmergencyInfo();
-=======
-                obj_fragment = new parking_Fragment();
->>>>>>> origin/master
                 break;
             // Parking info
             case 4:
