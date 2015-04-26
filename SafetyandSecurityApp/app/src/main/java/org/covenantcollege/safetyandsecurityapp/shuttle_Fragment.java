@@ -52,6 +52,9 @@ public class shuttle_Fragment extends Fragment {
         riders.setMaxValue(8);
         riders.setMinValue(1);
         riders.setValue(1);
+
+        Spinner pickUp = (Spinner)rootview.findViewById(R.id.shuttlePickUpLocationSpinner);
+        pickUp.setSelection(5);
         return rootview;
     }
 
@@ -68,18 +71,17 @@ public class shuttle_Fragment extends Fragment {
         Spinner fromLocation = (Spinner)view.findViewById(R.id.shuttlePickUpLocationSpinner);
         Spinner toLocation = (Spinner)view.findViewById(R.id.shuttleDestinationSpinner);
         NumberPicker riders = (NumberPicker)view.findViewById(R.id.shuttleNumberOfRiders);
-        String message = "Hi im " + nameField.getText() + " and I'm feeling lazy. Come pick me";
+        String message = "Hi I'm " + nameField.getText();
         if(riders.getValue() > 1)
         {
-            message += " and " + (riders.getValue() - 1) + " other brohans";
+            message += ". " + (riders.getValue() - 1) + " people and I";
         }
         else
         {
-            message += " all by my lonesome self";
+            message += " and I";
         }
-
-        message += " up at " + fromLocation.getSelectedItem().toString() +
-                " and take me alllll the way to " + toLocation.getSelectedItem().toString() + ". Oh and make it snappy. Ain't nobody got time for waitin'! Hurry!";
+        message += " would like a ride from " + fromLocation.getSelectedItem().toString() +
+                " to " + toLocation.getSelectedItem().toString() + ". Thanks!";
 
         System.out.println(message);
 
