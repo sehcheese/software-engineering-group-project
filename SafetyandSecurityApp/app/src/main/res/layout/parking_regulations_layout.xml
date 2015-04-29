@@ -9,40 +9,32 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Vibrator" >
 
-<TextView
-    android:id="@+id/textView1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="124dp"
-    android:text="Covenant College Parking"
-    android:textColor="@android:color/black"
-    android:textSize="20sp" />
+    <TextView
+        android:id="@+id/parking_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Covenant College Parking"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <ListView
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:id="@+id/parking_notifications"
+        android:layout_below="@+id/parking_header"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/butt1"
+        android:id="@+id/parking_regulations"
         android:textAllCaps="false"
-        android:background="@drawable/customise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Parking Regulations"
-        android:layout_marginTop="53dp"
-        android:layout_below="@+id/butt2"
-        android:layout_alignLeft="@+id/butt2"
-        android:layout_alignStart="@+id/butt2" />
-
-    <Button
-        android:id="@+id/butt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Parking updates"
-        android:textAllCaps="false"
-        android:background="@drawable/customise"
-
-        android:layout_marginTop="46dp"
-        android:layout_below="@+id/textView1"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/parking_notifications"
         android:layout_centerHorizontal="true" />
-
 
 </RelativeLayout>
