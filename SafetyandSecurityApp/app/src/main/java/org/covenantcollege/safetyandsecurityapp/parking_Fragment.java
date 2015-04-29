@@ -45,7 +45,7 @@ public class parking_Fragment extends Fragment {
 
                         Intent objIntent = new Intent(Intent.ACTION_VIEW);
 
-                        objIntent.setDataAndType(path, "application/pdf");
+                        objIntent.setData(path);
 
                         objIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
