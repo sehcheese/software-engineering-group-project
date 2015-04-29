@@ -31,7 +31,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/shuttlePickUpLocationSpinner"
                 android:entries="@array/shuttle_potential_locations"
-                android:prompt="@string/shuttle_pick_up_location_prompt"
                 android:spinnerMode="dropdown"
                 android:layout_alignTop="@+id/shuttlePickupLocation"
                 android:layout_toRightOf="@+id/shuttlePickupLocation"
@@ -44,8 +43,8 @@
                 android:text="@string/shuttle_pick_up_location_text"
                 android:id="@+id/shuttlePickupLocation"
                 android:layout_below="@+id/shuttleNumberOfRiders"
+                android:layout_alignLeft="@+id/shuttleRidersPrompt"
                 android:layout_alignRight="@+id/shuttleRidersPrompt"
-                android:layout_alignEnd="@+id/shuttleRidersPrompt"
                 android:layout_marginTop="20dp" />
 
             <NumberPicker
@@ -72,7 +71,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/shuttleDestinationSpinner"
                 android:entries="@array/shuttle_potential_locations"
-                android:prompt="@string/shuttle_pick_up_location_prompt"
                 android:layout_marginTop="20dp"
                 android:spinnerMode="dropdown"
                 android:layout_below="@+id/shuttlePickUpLocationSpinner"
@@ -88,7 +86,7 @@
                 android:layout_below="@+id/shuttleRiderName"
                 android:layout_alignLeft="@+id/shuttleRiderName"
                 android:layout_alignStart="@+id/shuttleRiderName"
-                android:layout_marginTop="60dp" />
+                android:layout_marginTop="75dp" />
 
             <EditText
                 android:layout_width="wrap_content"
