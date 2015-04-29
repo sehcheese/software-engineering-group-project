@@ -33,21 +33,33 @@ public class parking_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.parking_regulations_layout, container, false);
 
-        // Query for parking notifications
+        // Query for parking notifications on startup
         new queryParkingNotifications().execute();
+
+        // Query on refresh
+        Button refreshButton = (Button) rootview.findViewById(R.id.parking_notifications_refresh);
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                new queryParkingNotifications().execute();
+            }
+        });
 
         Button button = (Button) rootview.findViewById(R.id.parking_regulations);
         button.setOnClickListener(new View.OnClickListener() {
 
             /**
-             * Opens the a PDF document on locally install viewer
+             * Opens the a PDF document
              * @param v
              */
             public void onClick(View v)
             {
+                Uri uri = Uri.parse("http://www.covenant.edu/pdf/safety/Parking_Regulations.pdf");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+
                 /**
                  *
-                 */
+                 *//*
                 //File pdf_file = new File("regulations.pdf"); // filepath
                 try
                 {
@@ -68,7 +80,7 @@ public class parking_Fragment extends Fragment {
                 } catch (Exception e)
                 {
                     e.printStackTrace();
-                }
+                }*/
             }
         });
 

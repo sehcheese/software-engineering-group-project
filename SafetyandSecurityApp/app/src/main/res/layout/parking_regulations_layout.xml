@@ -28,13 +28,21 @@
         android:layout_centerHorizontal="true" />
 
     <Button
+        android:id="@+id/parking_notifications_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/parking_notifications"
+        android:layout_centerHorizontal="true" />
+
+    <Button
         android:id="@+id/parking_regulations"
-        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Parking Regulations"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/parking_notifications"
+        android:layout_below="@+id/parking_notifications_refresh"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
